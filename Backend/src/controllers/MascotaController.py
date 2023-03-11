@@ -1,11 +1,11 @@
-from flask import jsonify
-from src.routes.mascota import mascota
+from flask import Blueprint, jsonify, request
+from src.models.Mascota import Mascota
 
-@mascota.routes('/')
+url_prefix = '/'
+mascota_bp = Blueprint('mascotas', __name__)
+
+@mascota_bp.route('/', methods=['GET'])
 def index():
-    data = {
-        "title": "Hello World",
-        "body": "Flask simple MVC"
-    }
+    data = Mascota.query.all()
 
     return jsonify(data)
