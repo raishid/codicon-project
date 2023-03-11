@@ -1,7 +1,11 @@
-from flask import Blueprint, request, url_for, redirect, render_template
+from flask import (
+    Blueprint, request, url_for, redirect, render_template, session,
+    current_app)
 from flask_login import login_required, logout_user, login_user, current_user
+from flask_principal import Identity, AnonymousIdentity, identity_changed
 from werkzeug.security import generate_password_hash, check_password_hash
 from src.config.Database import db
+from src.config.Auth import shelter_permission
 from src.models.Auth import Usuario
 
 url_prefix = '/'
@@ -52,12 +56,25 @@ def user_login():
             return 'La contraseña introducida no es correcta'
 
         login_user(usuario)
+
+        identity_changed.send(
+            current_app._get_current_object(),
+            identity=Identity(usuario.id)
+        )
         return redirect(url_for('auth.user_profile'))
 
 @auth_bp.route('/logout')
 @login_required
 def user_logout():
     logout_user()
+
+    for key in ('identity.name', 'identity.auth_type'):
+        session.pop(key, None)
+
+    identity_changed.send(
+        current_app._get_current_object(), identity=AnonymousIdentity()
+    )
+
     return 'You are now logged out'
 
 @auth_bp.route('/profile', methods=['GET'])
@@ -67,8 +84,6 @@ def user_profile():
 
 @auth_bp.route('/mascots', methods=['GET'])
 @login_required
+@shelter_permission.require(http_exception=403)
 def mascot_list():
-    if current_user.rol not in (1, 2):
-        return 'No tienes los permisos necesarios para acceder a esta página'
-
     return f'Has accedido a la lista de mascotas como: {current_user.nombre}'
