@@ -15,9 +15,7 @@ export default function Contact() {
            
           </HeaderInfo>
 
-          <Row>
-            
-          </Row>         
+           
         </div>
       </div>
     </Wrapper>

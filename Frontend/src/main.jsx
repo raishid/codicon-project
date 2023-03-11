@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import "./style/flexboxgrid.min.css";
 import './style/index.css';
+import './style/bootstrap.min.css';
 import App from './App';
 
 
