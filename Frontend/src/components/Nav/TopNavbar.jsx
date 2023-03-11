@@ -27,10 +27,8 @@ export default function TopNavbar() {
       <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
         <NavInner className="container flexSpaceCenter">
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
-          <img src="./src/assets/react.svg" alt="" />
-            <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
-              Perros
-            </h1>
+          <Logo src="./src/assets/svg/logo onbox.svg" alt="" />
+          
           </Link>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />
@@ -86,6 +84,15 @@ const Wrapper = styled.nav`
   left: 0;
   z-index: 999;
 `;
+
+const Logo = styled.img`
+
+width: 10vw;
+min-width: 130px;
+@media (max-width: 900px) {
+  width: 25vw;
+}
+`;
 const NavInner = styled.div`
   position: relative;
   height: 100%;
@@ -103,6 +110,8 @@ const BurderWrapper = styled.button`
 `;
 const UlWrapper = styled.ul`
   display: flex;
+      justify-content: space-between;
+    width: 40vw;
   @media (max-width: 760px) {
     display: none;
   }

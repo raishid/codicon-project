@@ -16,6 +16,7 @@
     border: 0;
     vertical-align: baseline;
     box-sizing: border-box;
+    max-width: 100%;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
@@ -42,7 +43,7 @@
     color: #0B093B;
   }
   a:hover {
-    color:#87f2a0;
+    color:#4dbfa8;
   }
   input:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px #fff inset; /* Change the color to your own background color */
@@ -51,7 +52,7 @@
   }
   body {
     background: #fff;
-    color: #0B093B;
+    color: #8a8a8a;
     font-family: 'Khula', sans-serif;
     overflow-x: hidden;
     font-size: 16px;
@@ -123,6 +124,11 @@
   .flexSpaceCenter {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  .flexSpaceCenter2 {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
   }
   .flexNullCenter {
@@ -236,7 +242,7 @@
     color: #C4FFFF;
   }
   .greenColor {
-    color: #49CB86;
+    color: #4dbfa8;
   }
   .greyColor {
     color: #707070;
@@ -249,19 +255,22 @@
     background-color: #0B093B;
   }
   .purpleBg {
-    background-color: #7620FF;
+    background-color: #6F63B7;
+  }
+  .purpleBg h2, .purpleBg h1 {
+  color: #f8f8f8;
   }
   .orangeBg {
     background-color: #F2B300;
   }
   .lightBg {
-    background-color: #F5F5F5;
+    background-color: #AFDCE2;
   }
   .coralBg {
     background-color: #C4FFFF;
   }
   .greenBg {
-    background-color: #87f2a0;
+    background-color: #4dbfa8;
   }
   .greyBg {
     background-color: #707070;
@@ -271,11 +280,50 @@
   }
   .greenBg:hover {
     color:#FFF;
-    background-color: #5ec175;
+    background-color: #5fe7cc;
   }
+  
 
   .fkZaKZ {
     padding-top: 80px;
     width: 100%;
     min-height: auto !important;
 }
+
+.mb-15px{
+margin-bottom: 15px;
+}
+.pt-15px{
+  padding-top: 15px;
+  }
+h2, h1,a{
+  color: #6f63b7;
+}
+.lightBg h2, .lightBg  h1, .lightBga{
+color: #F8F8F8;
+}
+h2, h1{
+ text-align: center;
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__slide {
+  flex: 0 0 45%; 
+  margin: 14px !important/* Default slide covers 100% of the viewport */
+}
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 33%;  };
+
+     /* Breakpoint SM slide covers 50% of the viewport */
+  }

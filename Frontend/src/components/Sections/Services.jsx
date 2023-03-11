@@ -15,85 +15,70 @@ export default function Services() {
     <Wrapper id="services">
      
       <div className="whiteBg" style={{ padding: "60px 0" }}>
+
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Our Awesome Services</h1>
-            <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
-            </p>
+            <h1 className="font40 extraBold">Beneficios de adoptar a una mascota</h1>
+            
           </HeaderInfo>
-          <ServiceBoxRow className="flex">
+          <ServiceBoxRow className="flex flexSpaceCenter2">
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="roller"
-                title="Graphic Design"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                icon="casa"
+                color="#A5DFD3"
+                subtitle="Provee bienestar y comida a otro ser vivo que lo necesita."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="monitor"
-                title="Web Design"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore."
+                icon="corazon"
+                color="#B6B0DB"
+                subtitle="Tendrás un amigo incondicional dispuesto a darte todo su cariño."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="browser"
-                title="Development"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+                icon="taza"
+               color="#FFCD9B"
+                subtitle="Ayudas a darle hogar a una mascota del refugio o en situación de calle."
               />
             </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
-              <ServiceBox icon="printer" title="Print" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor." />
-            </ServiceBoxWrapper>
+            
+
+            
           </ServiceBoxRow>
+          <ServiceBoxRow className="flex flexSpaceCenter2">
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="pata"
+                color="#FFCD9B"
+                subtitle="Dejas huella en tu comunidad sirviendo de ejemplo para otros."
+              />
+            </ServiceBoxWrapper>
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="pelota"
+                color="#A5DFD3"
+                subtitle="Puedes divertirte y compartir muy buenos momentos."
+              />
+            </ServiceBoxWrapper>
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="hueso"
+               color="#B6B0DB"
+                subtitle="Aprendes a adquirir compromiso y lazos fuertes de amor y amitad."
+              />
+            </ServiceBoxWrapper>
+            
+
+            
+          </ServiceBoxRow>
+          
         </div>
-        <div className="lightBg">
-          <div className="container">
-            <Advertising className="flexSpaceCenter">
-              <AddLeft>
-                <h4 className="font15 semiBold">A few words about company</h4>
-                <h2 className="font40 extraBold">A Study of Creativity</h2>
-                <p className="font12">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                  diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                </p>
-                <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0"}}>
-                  <div style={{ width: "190px" }}>
-                    <FullButton title="Get Started" action={() => alert("clicked")} />
-                  </div>
-                  <div style={{ width: "190px", marginLeft: "15px" }}>
-                    <FullButton title="Contact Us" action={() => alert("clicked")} border />
-                  </div>
-                </ButtonsRow>
-              </AddLeft>
-              <AddRight>
-                <AddRightInner>
-                  <div className="flexNullCenter">
-                    <AddImgWrapp1 className="flexCenter">
-                      <img src={AddImage1} alt="office" />
-                    </AddImgWrapp1>
-                    <AddImgWrapp2>
-                      <img src={AddImage2} alt="office" />
-                    </AddImgWrapp2>
-                  </div>
-                  <div className="flexNullCenter">
-                    <AddImgWrapp3>
-                      <img src={AddImage3} alt="office" />
-                    </AddImgWrapp3>
-                    <AddImgWrapp4>
-                      <img src={AddImage4} alt="office" />
-                    </AddImgWrapp4>
-                  </div>
-                </AddRightInner>
-              </AddRight>
-            </Advertising>
-          </div>
-        </div>
+        
       </div>
+      
+    
     </Wrapper>
   );
 }
@@ -102,14 +87,24 @@ const Wrapper = styled.section`
   width: 100%;
 `;
 const ServiceBoxRow = styled.div`
+
   @media (max-width: 860px) {
     flex-direction: column;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
   }
 `;
 const ServiceBoxWrapper = styled.div`
+flex-direction: column;
+display: flex;
+align-content: center;
+align-items: center;
+text-align: center;
   width: 20%;
-  margin-right: 5%;
-  padding: 80px 0;
+
+  padding: 30px 0;
   @media (max-width: 860px) {
     width: 100%;
     text-align: center;
@@ -165,8 +160,8 @@ const AddRight = styled.div`
   @media (max-width: 860px) {
     width: 80%;
     position: relative;
-    order: 1;
-    top: -40px;
+    order: 3;
+    top: 15px;
   }
 `;
 const AddRightInner = styled.div`

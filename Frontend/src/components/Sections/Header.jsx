@@ -3,18 +3,18 @@ import styled from "styled-components";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets
-import HeaderImage from "../../assets/img/banner.png";
-import QuotesIcon from "../../assets/svg/Quotes";
+import HeaderImage from "../../assets/svg/fondo home.svg";
+import doggImage from "../../assets/svg/perrito adopta home.svg";
 import Dots from "../../assets/svg/Dots";
 
 const DivHome = styled.div`
-height: 85vh;
+height: 90vh;
 `;
 const Img2 = styled.img`
 width: 110vw;height: 90vh;object-fit: cover;position:absolute;z-index:-10
 `;
 const Divdisplay = styled.div`
-height: 65vh;
+height: 80vh;
 display: flex;
 place-content: center;
 -webkit-box-align: center;
@@ -23,6 +23,9 @@ align-items: center;
 justify-content: flex-end;
 flex-wrap: nowrap;
 flex-direction: column;
+@media (max-width: 700px) {
+  height: 70vh;
+}
 }
 `;
 export default function Header() {
@@ -31,11 +34,12 @@ export default function Header() {
   <Img2 className="radius8" src={HeaderImage} alt="office" />
   <Divdisplay >
    
-    <a href="/" className="whiteColor radius8 greenBg" style={{ padding: "10px 15px" }}>
-                STAR  
+    <a href="/" className="" style={{ padding: "10px 15px" }}>
+                
+                <ImgDog className="radius8" src={doggImage} alt="office" />
               </a> <br></br>
-              <h2 className="whiteColor">
-        ADOPTE UN PERRITO
+              <h2 className="">
+        Adopta un perrito
     </h2>
 </Divdisplay>
     </DivHome>
@@ -55,6 +59,12 @@ const Wrapper = styled.section`
   @media (max-width: 960px) {
     flex-direction: column;
   }
+`;
+const ImgDog =styled.img`
+max-width:250px;
+@media (max-width: 960px) {
+  flex-direction: column;
+}
 `;
 const LeftSide = styled.div`
   width: 50%;
