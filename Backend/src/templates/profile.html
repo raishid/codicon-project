@@ -2,8 +2,8 @@
 
 <body>
 	<h1>Welcome user!</h1>
-	<form method="POST" action="/logout">
-		<h5>Use this button to <b>logout</b></h5>
-		<input type="submit">
-	</form>
+	<a href="/logout">Logout</a>
+	{% if usuario.rol < 3 %}
+		<a href="/mascots">Listado de mascotas</a>
+	{% endif %}
 </body>

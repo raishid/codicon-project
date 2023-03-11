@@ -7,19 +7,21 @@ class Usuario(UserMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(50))
-    apellido = db.Column(db.String(50))
+    apellido = db.Column(db.String(50), nullable=True)
     correo = db.Column(db.String(50))
     contrasena = db.Column(db.String(150))
     telefono = db.Column(db.String(20))
     direccion = db.Column(db.String(100))
+    rol = db.Column(db.Integer)
 
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)
 
-    def __init__(self, nombre, apellido, correo, contrasena, telefono, direccion):
+    def __init__(self, nombre, apellido, correo, contrasena, telefono, direccion, rol):
         self.nombre = nombre
         self.apellido = apellido
         self.correo = correo
         self.contrasena = contrasena
         self.telefono = telefono
         self.direccion = direccion
+        self.rol = rol
