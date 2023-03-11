@@ -8,8 +8,12 @@ flask = "==2.2.3"
 flask-sqlalchemy = "*"
 python-dotenv = "*"
 mysqlclient = "*"
+flask-migrate = "*"
 
 [dev-packages]
+faker = "*"
+flask-migrate = "*"
+flask-cli = "*"
 
 [requires]
 python_version = "3.8"
