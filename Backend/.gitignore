@@ -1,0 +1,7 @@
+src/__pycache__
+src/controllers/__pycache__
+src/models/__pycache__
+src/seeders/__pycache__
+__pycache__
+*.swp
+.pylintrc

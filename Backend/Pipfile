@@ -4,10 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
-mysql-connector-python = "*"
+flask = "==2.2.3"
+flask-sqlalchemy = "*"
+python-dotenv = "*"
+mysqlclient = "*"
+lorem = "*"
 
 [dev-packages]
+flask-migrate = "*"
+flask-seeder = "*"
+faker = "*"
+lorem = "*"
 
 [requires]
 python_version = "3.8"

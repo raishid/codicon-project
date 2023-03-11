@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+<body>
+	<h1>Welcome user!</h1>
+	<a href="/logout">Logout</a>
+	{% if usuario.rol < 3 %}
+		<a href="/mascots">Listado de mascotas</a>
+	{% endif %}
+</body>
