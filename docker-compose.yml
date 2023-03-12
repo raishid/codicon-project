@@ -71,7 +71,9 @@ services:
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/nginx/ssl/:rw
-
+    networks:
+      - codicon
+      
 networks:
   codicon:
     driver: bridge
