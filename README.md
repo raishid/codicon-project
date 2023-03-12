@@ -9,4 +9,4 @@ Poder adoptar un perrito desde cualquier refugio que esté registrado en la web.
 
 ### Workflow
 
- 
+![Image text](https://github.com/raishid/codicon-project/blob/main/workflow.jpeg)
