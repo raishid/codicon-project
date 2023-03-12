@@ -8,7 +8,7 @@ from src.config.Database import db
 from src.config.Auth import shelter_permission
 from src.models.Auth import Usuario
 
-url_prefix = '/'
+url_prefix = '/v1'
 auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/signup', methods=['GET', 'POST'])
