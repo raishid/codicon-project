@@ -21,7 +21,7 @@ export default function Projects() {
     <Wrapper id="projects" className="lightBg">
         <div className="container ">
        <HeaderInfo>
-            <h1 className="font40 pt-15px extraBold">ADOPTADOS</h1>
+            <h1 className="font40 pt-15px purpleColor extraBold">ADOPTADOS</h1>
             
           </HeaderInfo>
         <EmblaCarousel>
