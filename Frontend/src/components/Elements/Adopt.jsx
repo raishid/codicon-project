@@ -12,6 +12,7 @@ import perrofeliz from "../../assets/img/felicidades perrito.png";
 import perrosearch from "../../assets/img/perrito-buscando.png";
 import SelectCarousel from "../Elements/SelectCarousel";
 import ciudades from "../../contants/ciudades";
+import perritos from "../../contants/perritos";
 
 export default function Adopt( ) {
     const [show, setShow] = useState(false);
@@ -22,6 +23,25 @@ export default function Adopt( ) {
     const [fin, setfin] = useState("none");
     const [select1 , setselect ] = useState("none");
 
+    const [perrito, setPerrito] = useState({});
+    const [ ciudadSelect, setCiudadSelect ] = useState("Caracas");
+
+    const [ isHero, setIsHero ] = useState(false);
+
+    const [usuarioAdoptante, setUsuarioAdoptante] = useState({
+        nombre: "",
+        correo: "",
+        telefono: "",
+        direccion: "",
+    })
+
+    const handleChangeAdoptante = (event) => {
+        setUsuarioAdoptante({
+            ...usuarioAdoptante,
+            [event.target.name]: event.target.value
+        })
+    }
+
     const handleClose = () =>{
         setShow(false);
         setChoose("block"); setHero1("none") ;setconfirm("none"); setfin("none");setselect("none") 
@@ -31,12 +51,36 @@ export default function Adopt( ) {
         setChoose("block");
     }
        
-    const Showhero1 = () =>{ setChoose("none"); setHero1("block");setform("none")}
-    const Showselect = () =>{ setChoose("none"); setselect("block");setform("none")}
+    const Showhero1 = () =>{ 
+        setIsHero(true);
+        setChoose("none"); setHero1("block");setform("none")
+    }
+    const Showselect = () =>{
+        setChoose("none"); setselect("block");setform("none")
+    }
     const Showchoose=() =>{setChoose("block"); setHero1("none"); setselect("none"); setform("none") }
-    const Showform=() =>{setform("block"); setHero1("none") ; setselect("none");setconfirm("none")}
+    const Showform=(perrito = null) =>{
+        if(isHero){
+            perritoAleatorioByCiudad();
+        }else{
+            setPerrito(perrito);
+        }
+
+        setform("block"); setHero1("none") ; setselect("none");setconfirm("none")
+    }
     const Showconfirm=() =>{setconfirm("block"); setform("none") ; setfin("none")}
     const Showfin=() =>{setfin("block"); setconfirm("none") }
+
+    const handleCiudad = (event) => {
+        setCiudadSelect(event.target.value);
+    }
+
+    const perritoAleatorioByCiudad = () => {
+        const perritosByCiudad = perritos.filter(perrito => perrito.ciudad === ciudadSelect);
+        const perritoAleatorio = perritosByCiudad[Math.floor(Math.random() * perritosByCiudad.length)];
+        setPerrito(perritoAleatorio);
+    }
+
     
 
 
@@ -79,7 +123,7 @@ export default function Adopt( ) {
                         <h2 className="textCenter" style={{    margin:"30px 0px;"}}>¿En donde buscamos?</h2>
                             <Log >
                             
-                             <select className="form-control" name="" id="">
+                             <select className="form-control" onChange={handleCiudad}>
                              {ciudades.map((ciudad, index) => (
                                     <option key={index} value={ciudad}>{ciudad}</option>
                                 ))}
@@ -154,10 +198,10 @@ export default function Adopt( ) {
                         <h2 className="textCenter" style={{margin:"30px 0px;"}}>Datos para adoptar</h2>
                             <Log  style={{margin:"15px auto"}}>
                             
-                            <input placeholder="Nombre completo" className="form-control" type="text" style={{    margin: "15px"}}/>
-                <input placeholder="Correo de quien recibe" className="form-control" type="text" style={{    margin: "15px"}} />
-                <input placeholder="Teléfono de quien recibe" className="form-control" type="text" style={{    margin: "15px"}}/>
-                <input placeholder="Dirección de envío" className="form-control" type="text" style={{    margin: "15px"}} />
+                            <input placeholder="Nombre completo" name="nombre" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
+                <input placeholder="Correo de quien recibe" name="correo" className="form-control" type="email" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
+                <input placeholder="Teléfono de quien recibe" name="telefono" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
+                <input placeholder="Dirección de envío" name="direccion" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
                                 
 
                                 <div className="flex" style={{margin:"30px 0px 0px 0px"}} >
@@ -186,16 +230,22 @@ export default function Adopt( ) {
                 <div className="col-sm-6" style={{margin:"30px 0 0 0"}}>
                         <ConfirmDiv>
                             <h5 className="purpleColor textCenter">Datos de la mascota</h5>
-
                             <div style={{ padding: "15px 0px"}}> 
-                            <p className="purpleColor" >Lugar</p>
-                            <p>⭐ Valencia</p>
+                                <p className="purpleColor" >Nombre</p>
+                                <p>⭐ {perrito.nombre}</p>
+                            </div>
+                            <div style={{ padding: "15px 0px"}}> 
+                                <p className="purpleColor" >Lugar</p>
+                                <p>⭐ {perrito.ciudad}</p>
                             </div>
                             <div style={{ padding: "15px 0px"}}>
                             <p className="purpleColor" > Características</p>
-                            <p>⭐ Calmado</p>
-                            <p>⭐ Travieso</p>
-                            <p>⭐ Enérgico</p>
+                            {/*print map cualidades */}
+                            {perrito.cualidades?.map((cualidad, index) => {
+                                return (
+                                    <p key={index}>⭐ {cualidad}</p>
+                                )
+                            })}
                             <div>
                                 <div>
                                 <Superperro src={superperro} alt="" height="140px" />
@@ -211,18 +261,18 @@ export default function Adopt( ) {
 
                             <div > 
                             <p className="purpleColor" >Nombre Completo</p>
-                            <p>⭐ Junior</p>
+                            <p>⭐ {usuarioAdoptante.nombre}</p>
                             </div>
                             <div > 
                             <p className="purpleColor" >Correo</p>
-                            <p>⭐ test@testear.com</p>
+                            <p>⭐ {usuarioAdoptante.correo}</p>
                             </div><div> 
                             <p className="purpleColor" >Teléfono</p>
-                            <p>⭐ +58-416-123-4567</p>
+                            <p>⭐ {usuarioAdoptante.telefono}</p>
                             </div>
                             <div > 
                             <p className="purpleColor" >Dirección</p>
-                            <p>⭐ Calle, avenida, callejón, valencia, Venezuela.</p>
+                            <p>⭐ {usuarioAdoptante.direccion}</p>
                             <div>
                                 <div>
                                 <Verifyperro src={verifyperro} alt="" height="140px" />

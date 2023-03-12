@@ -94,3 +94,6 @@ const perros = [
         raza: "Mestizo"
     }
 ];
+
+
+export default perros;
