@@ -18,7 +18,7 @@ export default function Landing() {
       <Projects />
       
       <Pricing />
-      <Contact />
+    
       <Footer />
     </>
   );
