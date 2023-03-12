@@ -112,9 +112,9 @@ const BurderWrapper = styled.button`
   background-color: transparent;
   height: 100%;
   padding: 0 15px;
-  display: none;
+  display: none !Important;
   @media (max-width: 760px) {
-    display: block;
+    display: flex !important;
   }
 `;
 const UlWrapper = styled.ul`
