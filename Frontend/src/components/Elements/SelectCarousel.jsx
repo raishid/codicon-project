@@ -17,21 +17,12 @@ import ProjectImg4 from "../../assets/img/pets/foto 4.png";
 
 
 export default  function SelectCarousel ({action}){
-  const [emblaRef, emblaApi] = useEmblaCarousel()
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
-  }, [emblaApi])
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
-  }, [emblaApi])
 
   return (
     <Embla className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <EmblaContainer className="embla__container  ">
-        <DogBox className="embla__slide Select_slide "
+      <div style={{padding:"20px 0 0"}} className="embla__viewport " >
+        <EmblaContainer className="flexSpaceCenter5 bsnone embla__container row  ">
+        <DogBox className=" col-md-4 lightBg embla__slide Select_slide "
               img={ProjectImg1}
               tamano="Mediano"
               raza="mestizo"
@@ -39,7 +30,7 @@ export default  function SelectCarousel ({action}){
               Sexo="Macho"
               ciudad=" Valencia, Venezuela"
               action={action}
-            /><DogBox className="embla__slide Select_slide  "
+            /><DogBox className="  col-md-4 lightBg embla__slide Select_slide  "
             img={ProjectImg2}
               tamano="Mediano"
               raza="Bulldog"
@@ -47,7 +38,7 @@ export default  function SelectCarousel ({action}){
               Sexo="Macho"
               ciudad=" Valencia, Venezuela"
               action={action}
-          /><DogBox className="embla__slide Select_slide  "
+          /><DogBox className=" col-md-4 lightBg embla__slide Select_slide  "
           img={ProjectImg3}
               tamano="Grande"
               raza="mestizo"
@@ -55,7 +46,7 @@ export default  function SelectCarousel ({action}){
               Sexo="Macho"
               ciudad=" Caracas, Venezuela"
               action={action}
-        /><DogBox className="embla__slide  Select_slide "
+        /><DogBox className=" col-md-4 lightBg embla__slide  Select_slide "
         img={ProjectImg4}
               tamano="Pequeño"
               raza="mestizo"
@@ -78,7 +69,24 @@ max-width: 85vw;
 
 const EmblaContainer = styled.section`
  
-    
+max-height: 360px;overflow-y: scroll;
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+
+ 
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+border: 3px solid transparent;
+ background-clip: content-box;
+  background-color: #6F63B7;
+}
+
 `;
 
 const Wrapper = styled.section`

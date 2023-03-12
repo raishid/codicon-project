@@ -132,6 +132,11 @@
     justify-content: space-around  !important; 
     align-items: center  !important;
   }
+  .flexSpaceCenter5 {
+    display: flex  !important;
+    justify-content: center !important; 
+  
+  }
   .flexNullCenter {
     display: flex;
     align-items: center;

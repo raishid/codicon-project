@@ -8,7 +8,7 @@ import Raza from "../../assets/img/raza.svg";
 
 export default function Dogbox({className, img, tamano, raza, Nombre,Sexo,ciudad,action}) {
   return (
-    <Wrapper className={className}  onClick={action ? () => action() : null}>
+    <Wrapper className={className }  onClick={action ? () => action() : null}>
       <ImgBtn className="aniamte pointer" onClick={action ? () => action() : null}>
         <img className="" src={img} alt="project"></img>
       </ImgBtn>
@@ -47,7 +47,7 @@ const Col5 = styled.div`
 
 `
 const Wrapper = styled.button`
-background-color: transparent;
+
 border: 0px;
 outline: none;
 padding: 0px;
@@ -55,7 +55,7 @@ margin: 0px;
   width: 100%;
   margin-top: 30px;
   margin:30px;
-  background-color:white;
+ 
   border-radius: 20px ;
   img,button {
     width: 100%;

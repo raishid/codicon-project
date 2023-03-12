@@ -43,7 +43,7 @@ export default function Login( ) {
     }
 
 
-    return <><a onClick={handleShow} style={{ padding: "10px 30px 10px 0" }}>
+    return <><a onClick={handleShow} style={{ display:"none" ,padding: "10px 30px 10px 0" }}>
     Login
   </a>
     

@@ -120,62 +120,16 @@ export default function Adopt( ) {
             </Modal.Body>
         </div>
         <div style={{display:select1}}>
-        <Modal.Header className="row" bsnone >
-                    <div className="col-10 row" style={{padding:"0"}}>
-                        <div className="col-6 col-md-3">
-                            <label htmlFor="" className="fw-bolder purpleColor">Ciudad </label>
-                        <select className="form-control " name="" id="">
-                                <option hidden value="">Todas</option>
-                                <option value="">Caracas</option>
-                                <option value="">Maracay</option>
-                                <option value="">San Cristobal</option>
-                             </select>
-                        </div>
-                        <div className="col-6 col-md-3">
-                            <label htmlFor="" className="fw-bolder purpleColor">Refugio </label>
-                        <select className="form-control " name="" id="">
-                                <option hidden value="">Todos</option>
-                                <option value="">Caracas</option>
-                                <option value="">Maracay</option>
-                                <option value="">San Cristobal</option>
-                             </select>
-                        </div>
-                        <div className="col-6 col-md-3">
-                            <label htmlFor="" className="fw-bolder purpleColor">edad </label>
-                        <select className="form-control " name="" id="">
-                                <option hidden value="">Ciudad</option>
-                                <option value="">Caracas</option>
-                                <option value="">Maracay</option>
-                                <option value="">San Cristobal</option>
-                             </select>
-                        </div>
-                        <div className="col-6 col-md-3">
-                            <label htmlFor="" className="fw-bolder purpleColor">Caracteristicas </label>
-                        <select className="form-control " name="" id="">
-                                <option hidden value="">Ciudad</option>
-                                <option value="">Caracas</option>
-                                <option value="">Maracay</option>
-                                <option value="">San Cristobal</option>
-                             </select>
-                        </div>
-                  
-                           
-                             
-                             
-                    </div>
-                    <div className="col-2">
-                        <img width="" style={{width:"50px"}} src={perrosearch} alt="" />
-                    </div>
-            </Modal.Header >
+        
 
         
-            <Modal.Body className="row lightBg bsnone" style={{padding: '0'}}    >
+            <Modal.Body className="row whiteBg bsnone" style={{padding: '0'}}    >
             <SelectCarousel
             action={Showform}>
        
        </SelectCarousel>
          
-       <div className="flexCenter" style={{margin:"30px 0px 20px "}} >
+       <div className="flexCenter" style={{margin:"00px 0px 20px "}} >
                                     <a onClick={Showchoose} className="whiteColor radius8 greenBg" style={{ padding: "10px 15px", margin:"0 10px 0 10px"}}>
                                     ATRÁS</a>
                                     
