@@ -9,27 +9,27 @@ export default function ServiceBox({icon, title, subtitle,color}) {
 
   switch (icon) {
     case "taza":
-      getIcon =  "./src/assets/svg/taza.svg";
+      getIcon =  "/assets/taza.svg";
    
       break;
     case "corazon":
-      getIcon = "./src/assets/svg/corazón.svg";
+      getIcon = "/assets/corazón.svg";
       break;
     case "casa":
-      getIcon = "./src/assets/svg/casa.svg";
+      getIcon = "/assets/casa.svg";
       break;
       case "pata":
-      getIcon = "./src/assets/svg/pata.svg";
+      getIcon = "/assets/pata.svg";
       break;
       case "pelota":
-      getIcon = "./src/assets/svg/pelota.svg";
+      getIcon = "/assets/pelota.svg";
       break;
       case "hueso":
-      getIcon = "./src/assets/svg/hueso.svg";
+      getIcon = "/assets/hueso.svg";
       break;
  
     default:
-      getIcon = "./src/assets/svg/taza.svg";
+      getIcon = "/assets/taza.svg";
       break;
    
   }

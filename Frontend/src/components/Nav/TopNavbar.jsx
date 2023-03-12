@@ -33,7 +33,7 @@ export default function TopNavbar() {
       <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
         <NavInner className="container flexSpaceCenter">
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
-          <Logo src="./src/assets/svg/logo onbox.svg" alt="" />
+          <Logo src="/assets/logo onbox.svg" alt="" />
           
           </Link>
           <BurderWrapper className="pointer flexSpaceCenter2" style={{width:"102vw"}} >

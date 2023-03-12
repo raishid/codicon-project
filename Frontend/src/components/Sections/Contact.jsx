@@ -34,7 +34,7 @@ Contact@onbox.com
                 <textarea placeholder="Mensaje" className="form-control" type="text"  style={{resize:"none" ,   margin: "10px"}}/>
               </div>
               <div className="col-4">
-                <img src="./src/assets/img/perro y gato juntos contactos.png" alt="" />
+                <img src="/assets/perro y gato juntos contactos.png" alt="" />
                 <div className=" textCenter" style={{width:"466px"}}>
      
       <a href="/" className="whiteColor radius8 greenBg" style={{ padding: "10px 15px" }}>

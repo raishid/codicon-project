@@ -13,7 +13,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
     <Wrapper className="animate darkBg" sidebarOpen={sidebarOpen}>
       <SidebarHeader className="flexSpaceCenter">
         <div className="flexNullCenter">
-        <Logo src="./src/assets/svg/logo onbox.svg" alt="" />
+        <Logo src="/assets/logo onbox.svg" alt="" />
          
         </div>
         <CloseBtn onClick={() => toggleSidebar(!sidebarOpen)} className="animate pointer">

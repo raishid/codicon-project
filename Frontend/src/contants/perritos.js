@@ -8,7 +8,7 @@ const perros = [
         ],
         ciudad: "Caracas",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-01.jpg"
+        img: "/assets/perrito-01.jpg"
     },
     {
         nombre: "Luna",
@@ -19,7 +19,7 @@ const perros = [
         ],
         ciudad: "Maracaibo",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-2.jpg"
+        img: "/assets/perrito-2.jpg"
     },
     {
         nombre: "Thor",
@@ -30,7 +30,7 @@ const perros = [
         ],
         ciudad: "Valencia",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-3.jpg"
+        img: "/assets/perrito-3.jpg"
     },
     {
         nombre: "Molly",
@@ -41,7 +41,7 @@ const perros = [
         ],
         ciudad: "Barquisimeto",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-4.jpg"
+        img: "/assets/perrito-4.jpg"
     }, {
         nombre: "Rocky",
         sexo: "Macho",
@@ -51,7 +51,7 @@ const perros = [
         ],
         ciudad: "Caracas",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-5.jpg"
+        img: "/assets/perrito-5.jpg"
     }, {
         nombre: "Kiara",
         sexo: "Hembra",
@@ -61,7 +61,7 @@ const perros = [
         ],
         ciudad: "Maracaibo",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-6.jpg"
+        img: "/assets/perrito-6.jpg"
     }, {
         nombre: "Max",
         sexo: "Macho",
@@ -71,7 +71,7 @@ const perros = [
         ],
         ciudad: "Valencia",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-7.jpg"
+        img: "/assets/perrito-7.jpg"
     }, {
         nombre: "Bella",
         sexo: "Hembra",
@@ -81,7 +81,7 @@ const perros = [
         ],
         ciudad: "Barquisimeto",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-8.jpg"
+        img: "/assets/perrito-8.jpg"
     }, {
         nombre: "Bruno",
         sexo: "Macho",
@@ -91,7 +91,7 @@ const perros = [
         ],
         ciudad: "Caracas",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-9.jpg"
+        img: "/assets/perrito-9.jpg"
     }, {
         nombre: "Daisy",
         sexo: "Hembra",
@@ -101,7 +101,7 @@ const perros = [
         ],
         ciudad: "Maracaibo",
         raza: "Mestizo",
-        img: "/src/assets/img/pets/perrito-10.jpg"
+        img: "/assets/perrito-10.jpg"
     }
 ];
 
