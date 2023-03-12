@@ -8,13 +8,15 @@ flask = "==2.2.3"
 flask-sqlalchemy = "*"
 python-dotenv = "*"
 mysqlclient = "*"
-lorem = "*"
 flask-principal = "*"
 flask-login = "*"
+gevent = "*"
+gunicorn = "*"
+gevent-websocket = "*"
 
 [dev-packages]
-flask-migrate = "*"
-flask-seeder = "*"
+Flask-Migrate = "*"
+Flask-Seeder = "*"
 faker = "*"
 lorem = "*"
 

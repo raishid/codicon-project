@@ -26,3 +26,17 @@ class Usuario(UserMixin, db.Model):
         self.telefono = telefono
         self.direccion = direccion
         self.rol = rol
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'nombre': self.nombre,
+            'apellido': self.apellido,
+            'correo': self.correo,
+            'contrasena': self.contrasena,
+            'telefono': self.telefono,
+            'direccion': self.direccion,
+            'rol': self.rol,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
+        }
