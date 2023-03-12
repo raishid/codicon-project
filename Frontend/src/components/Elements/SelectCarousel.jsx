@@ -9,7 +9,7 @@ import ProjectImg1 from "../../assets/img/pets/foto 1.png";
 import ProjectImg2 from "../../assets/img/pets/foto 2.png";
 import ProjectImg3 from "../../assets/img/pets/foto 3.png";
 import ProjectImg4 from "../../assets/img/pets/foto 4.png";
-
+import perritos from '../../contants/perritos'
 
 
 
@@ -22,39 +22,18 @@ export default  function SelectCarousel ({action}){
     <Embla className="embla">
       <div style={{padding:"20px 0 0"}} className="embla__viewport " >
         <EmblaContainer className="flexSpaceCenter5 bsnone embla__container row  ">
-        <DogBox className=" col-md-4 lightBg embla__slide Select_slide "
-              img={ProjectImg1}
-              tamano="Mediano"
-              raza="mestizo"
-              Nombre="Junior"
-              Sexo="Macho"
-              ciudad=" Valencia, Venezuela"
-              action={action}
-            /><DogBox className="  col-md-4 lightBg embla__slide Select_slide  "
-            img={ProjectImg2}
-              tamano="Mediano"
-              raza="Bulldog"
-              Nombre="Cacha"
-              Sexo="Macho"
-              ciudad=" Valencia, Venezuela"
-              action={action}
-          /><DogBox className=" col-md-4 lightBg embla__slide Select_slide  "
-          img={ProjectImg3}
-              tamano="Grande"
-              raza="mestizo"
-              Nombre="Tom"
-              Sexo="Macho"
-              ciudad=" Caracas, Venezuela"
-              action={action}
-        /><DogBox className=" col-md-4 lightBg embla__slide  Select_slide "
-        img={ProjectImg4}
-              tamano="Pequeño"
-              raza="mestizo"
-              Nombre="Sofi"
-              Sexo="Hembra"
-              ciudad=" Valencia, Venezuela"
-              action={action}
-      />
+        {perritos.map((perrito, index) => (
+          <DogBox className=" col-md-4 lightBg embla__slide Select_slide "
+                key={index}
+                img={ProjectImg1}
+                tamano={perrito.tamaño}
+                raza={perrito.raza}
+                Nombre={perrito.nombre}
+                Sexo={perrito.sexo}
+                ciudad={`${perrito.ciudad}, Venezuela`}
+                action={() => action(perrito)}
+              />
+        ))}
         </EmblaContainer>
       </div>
     
