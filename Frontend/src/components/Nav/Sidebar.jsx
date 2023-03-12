@@ -83,7 +83,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
       </UlStyle>
       <UlStyle className="flexCenter">
         <li  className="semiBold font15 pointer">
-        <Login  onClick={() => toggleSidebar(!sidebarOpen)} />
+        <Login   />
         </li>
        
       </UlStyle>
