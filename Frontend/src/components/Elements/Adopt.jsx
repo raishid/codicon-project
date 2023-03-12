@@ -13,6 +13,7 @@ import perrosearch from "../../assets/img/perrito-buscando.png";
 import SelectCarousel from "../Elements/SelectCarousel";
 import ciudades from "../../contants/ciudades";
 import perritos from "../../contants/perritos";
+import axios from 'axios'
 
 export default function Adopt( ) {
     const [show, setShow] = useState(false);
@@ -70,7 +71,19 @@ export default function Adopt( ) {
         setform("block"); setHero1("none") ; setselect("none");setconfirm("none")
     }
     const Showconfirm=() =>{setconfirm("block"); setform("none") ; setfin("none")}
-    const Showfin=() =>{setfin("block"); setconfirm("none") }
+    const Showfin=() =>{
+        try{
+
+            axios.post('http://api.onbox.lat/v1/send', {
+                nombre: usuarioAdoptante.nombre,
+                correo: usuarioAdoptante.correo,
+                nombrePerrito: perrito.nombre,
+            })
+        }catch(error){
+            console.log(error);
+        }
+        setfin("block"); setconfirm("none") 
+    }
 
     const handleCiudad = (event) => {
         setCiudadSelect(event.target.value);
