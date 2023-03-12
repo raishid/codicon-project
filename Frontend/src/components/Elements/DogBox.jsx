@@ -22,8 +22,8 @@ export default function Dogbox({className, img, tamano, raza, Nombre,Sexo,ciudad
     margin: "0 10px 0 0"}} />{raza}</p>
       <p className="font15 "><img src={Sexop} alt="" style={{width: "17px",
     margin: "0 10px 0 0"}} />{Sexo}</p>
-      <p className="font15  "><img src={Lugar} alt="" style={{width: "17px",
-    margin: "0 10px 0 0"}} />{ciudad}</p>
+      <P className="font15  "><img src={Lugar} alt="" style={{width: "17px",
+    margin: "0 10px 0 0"}} />{ciudad}</P>
 
 
        
@@ -44,6 +44,11 @@ display: grid;
 justify-items: start;
 `
 const Col5 = styled.div`
+
+`
+
+const P = styled.div`
+white-space: pre;
 
 `
 const Wrapper = styled.button`
