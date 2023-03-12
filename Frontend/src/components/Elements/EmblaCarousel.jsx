@@ -35,25 +35,25 @@ export const EmblaCarousel = () => {
               
               title="Junior"
               text=" Valencia, Venezuela"
-              action={() => alert("clicked")}
+              action={() => alert("Frontend: @Doble-2 Github")}
             /><ProjectBox className="embla__slide   "
             img={ProjectImg2}
             mode={Heroe}
             title="Canela"
             text=" Valencia, Venezuela"
-            action={() => alert("clicked")}
+            action={() => alert("Backend: @raishid Github ")}
           /><ProjectBox className="embla__slide   "
           img={ProjectImg3}
           title="Ginebra"
           text=" Valencia, Venezuela"
           mode={Heroe}
-          action={() => alert("clicked")}
+          action={() => alert("Backend: @GabrielEHT Github")}
         /><ProjectBox className="embla__slide   "
         img={ProjectImg4}
         title="Canela"
         mode={Eleccion}
         text=" Valencia, Venezuela"
-        action={() => alert("clicked")}
+        action={() => alert("Diseño: @ProyeectosJenni Instagram")}
       />
         </EmblaContainer>
       </div>
