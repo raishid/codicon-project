@@ -13,6 +13,8 @@ services:
       - PYTHONUNBUFFERED=1
     networks:
       - codicon
+    volumes:
+      - ./Backend:/home/app
     depends_on:
       - mysql
 
