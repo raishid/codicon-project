@@ -228,35 +228,44 @@ export default function Adopt( ) {
                     <div className="col-12 textCenter">
                     <h2 className="textCenter" style={{margin:"30px 0px;"}}>Confirmación de datos</h2>
                     </div>
-                <div className="col-sm-6" style={{margin:"30px 0 0 0"}}>
-                        <ConfirmDiv>
+                <Contain className="col-sm-6" style={{margin:"30px 0 0 0"}}>
+                        <ConfirmDiv style={{padding:"0"}} >
+                            <div style={{padding:"20px 20px 0px 20px"}} >
                             <h5 className="purpleColor textCenter">Datos de la mascota</h5>
-                            <div style={{ padding: "15px 0px"}}> 
-                                <p className="purpleColor" >Nombre</p>
-                                <p>⭐ {perrito.nombre}</p>
+                          
+                          <div style={{ padding: "5px 0px"}}> 
+                              <p className="purpleColor" >Nombre</p>
+                              <p>⭐ {perrito.nombre}</p>
+                          </div>
+                          <div style={{ padding: "5px 0px"}}> 
+                              <p className="purpleColor" >Lugar</p>
+                              <p>⭐ {perrito.ciudad}</p>
+                          </div>
+                          <div style={{ padding: "5px 0px"}}>
+                          <p className="purpleColor" > Características</p>
+                          {/*print map cualidades */}
+                          {perrito.cualidades?.map((cualidad, index) => {
+                              return (
+                                  <p key={index}>⭐ {cualidad}</p>
+                              )
+                          })}
+                        
+                          <div>
+                              <div>
+                              <Superperro src={superperro} alt="" height="140px" />
+                              </div>
+                             
+                          </div>
+                         
+                          </div>
+                          
                             </div>
-                            <div style={{ padding: "15px 0px"}}> 
-                                <p className="purpleColor" >Lugar</p>
-                                <p>⭐ {perrito.ciudad}</p>
-                            </div>
-                            <div style={{ padding: "15px 0px"}}>
-                            <p className="purpleColor" > Características</p>
-                            {/*print map cualidades */}
-                            {perrito.cualidades?.map((cualidad, index) => {
-                                return (
-                                    <p key={index}>⭐ {cualidad}</p>
-                                )
-                            })}
                             <div>
-                                <div>
-                                <Superperro src={superperro} alt="" height="140px" />
-                                </div>
-                            </div>
-                            
-                            </div>
+                              <Photo src={perrito.img} alt="" />
+                              </div>
                         </ConfirmDiv>
-                    </div>
-                    <div className="col-sm-6" style={{margin:"30px 0 0 0"}}>
+                    </Contain>
+                    <Contain className="col-sm-6" style={{margin:"30px 0 0 0"}}>
                     <ConfirmDiv>
                             <h5 className="purpleColor textCenter">Datos del dueño</h5>
 
@@ -283,7 +292,7 @@ export default function Adopt( ) {
                         </ConfirmDiv>
                         
                      
-                    </div>
+                    </Contain>
                     <div className="flex flexCenter" style={{margin:"30px 0px 0px 0px"}} >
                                     <a onClick={Showform} className="whiteColor radius8 greenBg" style={{ padding: "10px 15px", margin:"0 10px 0 10px"}}>
                                     ATRÁS</a>
@@ -367,12 +376,34 @@ border-radius: 30px;
 padding: 20px;
 max-width: 222px;
 
+
+
+`;
+
+const Contain = styled.div`
+@media (max-width: 990px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+
+
+`;
+
+
+
+const Photo = styled.img`
+
+height: 100%;
+border-radius: 31px;
+
 `;
 
 const Superperro = styled.img`
 position: absolute;
-bottom: 17%;
-right: 65%;
+bottom: 8%;
+right: 61%;
 @media (max-width: 990px) {
     display:none
   }
