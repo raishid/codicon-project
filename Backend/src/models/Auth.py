@@ -33,7 +33,6 @@ class Usuario(UserMixin, db.Model):
             'nombre': self.nombre,
             'apellido': self.apellido,
             'correo': self.correo,
-            'contrasena': self.contrasena,
             'telefono': self.telefono,
             'direccion': self.direccion,
             'rol': self.rol,
