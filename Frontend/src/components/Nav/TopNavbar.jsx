@@ -36,8 +36,13 @@ export default function TopNavbar() {
           <Logo src="./src/assets/svg/logo onbox.svg" alt="" />
           
           </Link>
-          <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
-            <BurgerIcon />
+          <BurderWrapper className="pointer flexSpaceCenter2" style={{width:"102vw"}} >
+       
+            <li className="semiBold font15 pointer flexCenter">
+            <Adopt/>
+            
+            </li>
+            <BurgerIcon onClick={() => toggleSidebar(!sidebarOpen)} />
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
             <li className="semiBold font15 pointer">

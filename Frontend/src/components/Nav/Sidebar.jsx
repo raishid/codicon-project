@@ -81,13 +81,11 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           </Link>
         </li>
       </UlStyle>
-      <UlStyle className="flexSpaceCenter">
-        <li onClick={() => toggleSidebar(!sidebarOpen)} className="semiBold font15 pointer">
-        <Login/>
+      <UlStyle className="flexCenter">
+        <li  className="semiBold font15 pointer">
+        <Login  onClick={() => toggleSidebar(!sidebarOpen)} />
         </li>
-        <li onClick={() => toggleSidebar(!sidebarOpen)} className="semiBold font15 pointer flexCenter">
-        <Adopt />
-        </li>
+       
       </UlStyle>
     </Wrapper>
   );

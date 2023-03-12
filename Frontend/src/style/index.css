@@ -128,9 +128,9 @@
     align-items: center;
   }
   .flexSpaceCenter2 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: flex  !important;
+    justify-content: space-around  !important; 
+    align-items: center  !important;
   }
   .flexNullCenter {
     display: flex;
