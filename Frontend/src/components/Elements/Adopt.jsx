@@ -56,6 +56,7 @@ export default function Adopt( ) {
         setChoose("none"); setHero1("block");setform("none")
     }
     const Showselect = () =>{
+        setIsHero(false);
         setChoose("none"); setselect("block");setform("none")
     }
     const Showchoose=() =>{setChoose("block"); setHero1("none"); setselect("none"); setform("none") }

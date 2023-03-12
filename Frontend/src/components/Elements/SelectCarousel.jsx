@@ -25,7 +25,7 @@ export default  function SelectCarousel ({action}){
         {perritos.map((perrito, index) => (
           <DogBox className=" col-md-4 lightBg embla__slide Select_slide "
                 key={index}
-                img={ProjectImg1}
+                img={perrito.img}
                 tamano={perrito.tamaño}
                 raza={perrito.raza}
                 Nombre={perrito.nombre}

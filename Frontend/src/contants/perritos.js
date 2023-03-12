@@ -7,7 +7,8 @@ const perros = [
             "Juguetón", "Leal", "Inteligente"
         ],
         ciudad: "Caracas",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-01.jpg"
     },
     {
         nombre: "Luna",
@@ -17,7 +18,8 @@ const perros = [
             "Amigable", "Protectiva", "Cariñosa"
         ],
         ciudad: "Maracaibo",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-2.jpg"
     },
     {
         nombre: "Thor",
@@ -27,7 +29,8 @@ const perros = [
             "Fuerte", "Valiente", "Obediente"
         ],
         ciudad: "Valencia",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-3.jpg"
     },
     {
         nombre: "Molly",
@@ -37,7 +40,8 @@ const perros = [
             "Divertida", "Inquieta", "Curiosa"
         ],
         ciudad: "Barquisimeto",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-4.jpg"
     }, {
         nombre: "Rocky",
         sexo: "Macho",
@@ -46,7 +50,8 @@ const perros = [
             "Energético", "Afectuoso", "Entrenable"
         ],
         ciudad: "Caracas",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-5.jpg"
     }, {
         nombre: "Kiara",
         sexo: "Hembra",
@@ -55,7 +60,8 @@ const perros = [
             "Tranquila", "Leal", "Cuidadosa"
         ],
         ciudad: "Maracaibo",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-6.jpg"
     }, {
         nombre: "Max",
         sexo: "Macho",
@@ -64,7 +70,8 @@ const perros = [
             "Adorable", "Amigable", "Divertido"
         ],
         ciudad: "Valencia",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-7.jpg"
     }, {
         nombre: "Bella",
         sexo: "Hembra",
@@ -73,7 +80,8 @@ const perros = [
             "Inteligente", "Leal", "Protectiva"
         ],
         ciudad: "Barquisimeto",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-8.jpg"
     }, {
         nombre: "Bruno",
         sexo: "Macho",
@@ -82,7 +90,8 @@ const perros = [
             "Fuerte", "Leal", "Obediente"
         ],
         ciudad: "Caracas",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-9.jpg"
     }, {
         nombre: "Daisy",
         sexo: "Hembra",
@@ -91,7 +100,8 @@ const perros = [
             "Cariñosa", "Divertida", "Curiosa"
         ],
         ciudad: "Maracaibo",
-        raza: "Mestizo"
+        raza: "Mestizo",
+        img: "/src/assets/img/pets/perrito-10.jpg"
     }
 ];
 
