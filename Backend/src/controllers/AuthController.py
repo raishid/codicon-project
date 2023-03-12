@@ -1,6 +1,4 @@
-from flask import (
-    Blueprint, request, url_for, redirect, session,
-    current_app, jsonify, abort)
+from flask import (Blueprint, request, url_for, redirect, session, current_app, jsonify, abort)
 from flask_login import login_required, logout_user, login_user, current_user
 from flask_principal import Identity, AnonymousIdentity, identity_changed
 from werkzeug.security import generate_password_hash, check_password_hash
