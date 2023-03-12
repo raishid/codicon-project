@@ -18,7 +18,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = mysql()
 with app.app_context():
     db.init_app(app)
     migrate = Migrate(app, db)
-    db.create_all()
     seeder = FlaskSeeder()
     seeder.init_app(app, db)
 

@@ -4,6 +4,7 @@ from datetime import datetime
 
 class Usuario(UserMixin, db.Model):
     __tablename__ = 'usuarios'
+    __table_args__ = {'mysql_engine': 'InnoDB'}
 
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(50))
