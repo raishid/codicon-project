@@ -13,7 +13,6 @@ server{
     }
 }
 
-# frontend static files
 server{
     listen 80;
     server_name ${FRONTEND_HOST};

@@ -28,7 +28,6 @@ server{
     ssl_certificate_key /etc/nginx/ssl/live/${BACKEND_HOST}/privkey.pem;
 }
 
-# frontend static files
 server{
     listen 443 ssl http2;
     server_name ${FRONTEND_HOST};
