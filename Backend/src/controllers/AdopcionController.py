@@ -1,5 +1,5 @@
 from random import choice
-from flask import Blueprint
+from flask import Blueprint, request, jsonify
 from src.config.Database import db
 from src.models.Mascota import Mascota
 
@@ -16,3 +16,45 @@ def random_adoption():
     db.session.commit()
 
     return mascota.serialize()
+
+@adopcion_bp.route('mascotas/adoptar', methods=['POST'])
+def pet_adoption():
+    data = request.get_json()
+    id_mascota = data['id_mascota']
+
+    mascota = Mascota.query.get(id_mascota)
+    mascota.estado = 2
+
+    db.session.commit()
+
+    response = jsonify({'status': 200})
+
+    return response
+
+@adopcion_bp.route('mascotas/cancelar', methods=['POST'])
+def pet_cancel_adoption():
+    data = request.get_json()
+    id_mascota = data['id_mascota']
+
+    mascota = Mascota.query.get(id_mascota)
+    mascota.estado = 1
+
+    db.session.commit()
+
+    response = jsonify({'status': 200})
+
+    return response
+
+@adopcion_bp.route('mascotas/confirmar', methods=['POST'])
+def pet_confirm_adoption():
+    data = request.get_json()
+    id_mascota = data['id_mascota']
+
+    mascota = Mascota.query.get(id_mascota)
+    mascota.estado = 3
+
+    db.session.commit()
+
+    response = jsonify({'status': 200})
+
+    return response
