@@ -17,11 +17,8 @@ def random_adoption():
 
     return mascota.serialize()
 
-@adopcion_bp.route('mascotas/adoptar', methods=['POST'])
-def pet_adoption():
-    data = request.get_json()
-    id_mascota = data['id_mascota']
-
+@adopcion_bp.route('mascotas/adoptar/<id_mascota>', methods=['POST'])
+def pet_adoption(id_mascota):
     mascota = Mascota.query.get(id_mascota)
     mascota.estado = 2
 
@@ -31,11 +28,8 @@ def pet_adoption():
 
     return response
 
-@adopcion_bp.route('mascotas/cancelar', methods=['POST'])
-def pet_cancel_adoption():
-    data = request.get_json()
-    id_mascota = data['id_mascota']
-
+@adopcion_bp.route('mascotas/cancelar/<id_mascota>', methods=['POST'])
+def pet_cancel_adoption(id_mascota):
     mascota = Mascota.query.get(id_mascota)
     mascota.estado = 1
 
@@ -45,11 +39,8 @@ def pet_cancel_adoption():
 
     return response
 
-@adopcion_bp.route('mascotas/confirmar', methods=['POST'])
-def pet_confirm_adoption():
-    data = request.get_json()
-    id_mascota = data['id_mascota']
-
+@adopcion_bp.route('mascotas/confirmar/<id_mascota>', methods=['POST'])
+def pet_confirm_adoption(id_mascota):
     mascota = Mascota.query.get(id_mascota)
     mascota.estado = 3
 
