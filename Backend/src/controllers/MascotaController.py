@@ -7,6 +7,7 @@ url_prefix = '/v1'
 mascota_bp = Blueprint('mascotas', __name__)
 
 @mascota_bp.route('/mascotas', methods=['GET'])
+@admin_and_shelter.require(http_exception=403)
 def index():
     per_page = request.args.get('per_page', default=10, type=int)
     page = request.args.get('page', default=1, type=int)

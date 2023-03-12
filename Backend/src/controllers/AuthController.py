@@ -1,11 +1,10 @@
 from flask import (
-    Blueprint, request, url_for, redirect, render_template, session,
-    current_app, jsonify)
+    Blueprint, request, url_for, redirect, session,
+    current_app, jsonify, abort)
 from flask_login import login_required, logout_user, login_user, current_user
 from flask_principal import Identity, AnonymousIdentity, identity_changed
 from werkzeug.security import generate_password_hash, check_password_hash
 from src.config.Database import db
-from src.config.Auth import shelter_permission
 from src.models.Auth import Usuario
 
 url_prefix = '/v1'
@@ -39,23 +38,26 @@ def user_signup():
 
 @auth_bp.route('/login', methods=['POST'])
 def user_login():
-    correo = request.form.get('correo')
-    contrasena = request.form.get('contrasena')
+    data = request.get_json()
+    correo = data['correo']
+    contrasena = data['contraseña']
 
     usuario = Usuario.query.filter_by(correo=correo).first()
 
     if not usuario:
-        return f'El correo {correo} no está asociado a ninguna cuenta'
+        return abort(400, {'status': 404, 'message': 'El usuario no existe'}) 
     elif not check_password_hash(usuario.contrasena, contrasena):
-        return 'La contraseña introducida no es correcta'
+        return abort(401, {'status': 401, 'message': 'Contraseña incorrecta'})
 
     login_user(usuario)
 
     identity_changed.send(
         current_app._get_current_object(),
-        identity=Identity(usuario.id)
+        identity=Identity(usuario.id),
     )
-    return jsonify({'status': 200})
+    response = jsonify({'status': 200})
+    return response
+
 
 @auth_bp.route('/logout', methods=['GET'])
 @login_required

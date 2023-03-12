@@ -5,11 +5,42 @@ import Modal from 'react-bootstrap/Modal';
 import heroe from "../../assets/img/Grupo 349.svg";
 import elegir from "../../assets/img/modo elección.svg";
 
+import axios from '../../services/axios'
+
 export default function Login( ) {
     const [show, setShow] = useState(false);
 
+    const [formData, setFormData] = useState({
+        correo: '',
+        contraseña: ''
+      });
+
+    const handleChangeForm = (event) => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+        });
+        
+      };
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        
+        const response = await axios.post(
+            `/v1/login`,
+            formData,
+        )
+
+        const { data, status } = response;
+
+        if (status === 200) {
+            handleClose();
+            return;
+        }
+    }
 
 
     return <><a onClick={handleShow} style={{ padding: "10px 30px 10px 0" }}>
@@ -24,12 +55,13 @@ export default function Login( ) {
                         Iniciar sesión
                     </h2>
                 <Log >
-                
-            <input placeholder="Nombre" className="form-control" type="text" style={{    margin: "15px"}}/>
-                <input placeholder="Correo" className="form-control" type="text" style={{    margin: "15px"}} />
-                <a href=" "  style={{    margin: "15px"}}>¿olvidó la contraseña?</a>
-                <a onClick={handleShow} className="whiteColor radius8 greenBg" style={{ padding: "10px 15px" }}>
-INICIAR SESIÓN</a>
+            <form onSubmit={handleLogin}>
+                <input placeholder="Correo" name="correo" className="form-control" type="correo" style={{    margin: "15px"}} value={formData.correo} onChange={handleChangeForm}/>
+                    <input placeholder="Contraseña" name="contraseña" className="form-control" type="password" style={{    margin: "15px"}} value={formData.contraseña} onChange={handleChangeForm}/>
+                    {/* <a href=" "  style={{    margin: "15px"}}>¿olvidó la contraseña?</a> */}
+                    <button type="submit" className="whiteColor radius8 greenBg" style={{ padding: "10px 15px", border: 0 }}>
+    INICIAR SESIÓN</button>
+            </form>
                 </Log>
         
             </Modal.Body>
