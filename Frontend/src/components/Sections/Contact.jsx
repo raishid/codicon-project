@@ -15,7 +15,36 @@ export default function Contact() {
            
           </HeaderInfo>
 
-           
+        <div className="row pb-5 ">
+          <div className="col-md-6  whiteColor">
+<h5 className="pb-2">
+Gracias por estar aquí, esperamos que tu mejor amigo.
+</h5>
+<p  className="pb-4">
+Si tienes dudas o quieres comunicarte con nosotros, estos son los canales de contacto que ponemos a tu disposición.</p>
+<h5 className="textCenter pb-2">
+Contact@onbox.com
+</h5>
+          </div>
+          <div className="col-md-6">
+            <div className="whiteBg rounded-7 row p-4">
+              <div className="col-7">
+                <input placeholder="Nombre" className="form-control" type="text" style={{    margin: "10px"}}/>
+                <input placeholder="Correo" className="form-control" type="text" style={{    margin: "10px"}} />
+                <textarea placeholder="Mensaje" className="form-control" type="text"  style={{resize:"none" ,   margin: "10px"}}/>
+              </div>
+              <div className="col-4">
+                <img src="./src/assets/img/perro y gato juntos contactos.png" alt="" />
+                <div className=" textCenter" style={{width:"466px"}}>
+     
+      <a href="/" className="whiteColor radius8 greenBg" style={{ padding: "10px 15px" }}>
+                ENVIAR
+              </a>
+      </div>
+              </div>
+            </div>
+          </div>
+          </div>   
         </div>
       </div>
     </Wrapper>

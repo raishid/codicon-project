@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { ModalProvider } from 'styled-react-modal'
 import "./style/flexboxgrid.min.css";
+import "./style/bootstrap.min.css";
 import './style/index.css';
-import './style/bootstrap.min.css';
 import App from './App';
 
 
 ReactDOM.render(
   <>
+   <ModalProvider>
     <App />
+    </ModalProvider>
   </>,
   document.getElementById('root')
 );
