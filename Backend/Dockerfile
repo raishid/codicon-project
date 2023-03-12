@@ -9,7 +9,7 @@ COPY . /home/app
 # Install dependencies
 RUN pip install -r requirements.txt
 
-EXPOSE 8002
+EXPOSE 8001
 
-CMD ["gunicorn", "--conf", "/home/app/gunicorn_conf.py", "--bind", "0.0.0.0:8002", "wsgi:application"]
+CMD ["gunicorn", "--conf", "/home/app/gunicorn_conf.py", "--bind", "0.0.0.0:8001", "wsgi:application"]
 
