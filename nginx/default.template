@@ -12,3 +12,16 @@ server{
         root /var/www/certbot;
     }
 }
+
+server{
+    listen 80;
+    server_name ${FRONTEND_HOST};
+    location / {
+        root /var/www/html/frontend;
+        index index.html;
+    }
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+}
