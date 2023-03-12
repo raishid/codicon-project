@@ -29,13 +29,14 @@ flex-direction: column;
 }
 }
 `;
+
 export default function Header() {
   return (
     <DivHome id="home" >
   <Img2 className="radius8" src={HeaderImage} alt="office" />
   <Divdisplay >
    
-    <a href="/" className="" style={{ padding: "10px 15px" }}>
+    <a className="" style={{ padding: "10px 15px", cursor: 'auto' }} >
                 
                 <ImgDog className="radius8" src={doggImage} alt="office" />
               </a> <br></br>
