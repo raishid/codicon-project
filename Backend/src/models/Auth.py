@@ -36,6 +36,4 @@ class Usuario(UserMixin, db.Model):
             'telefono': self.telefono,
             'direccion': self.direccion,
             'rol': self.rol,
-            'created_at': self.created_at,
-            'updated_at': self.updated_at
         }

@@ -20,7 +20,9 @@ class Mascota(db.Model):
     estado = db.Column(db.Integer, default=1)
 
     refugio_id = db.Column(db.Integer, db.ForeignKey(Refugio.id), nullable=True)
-    refugio = db.relationship('Refugio', backref=db.backref('mascotas_refugio', lazy=True, cascade="all, delete"))
+    refugio = db.relationship('Refugio', backref=db.backref('mascotas_refugio', lazy=True, cascade="all, delete"), overlaps="mascotas")
+
+    cualidades = db.relationship('Cualidad', secondary='mascotas_cualidades', lazy='dynamic', backref=db.backref('mascotas_cualidades', lazy=True))
 
 
     created_at = db.Column(db.DateTime, default=datetime.now)
@@ -53,5 +55,8 @@ class Mascota(db.Model):
             'peso': self.peso,
             'descripcion': self.descripcion,
             'foto': self.foto,
-            'refugio': self.refugio.serialize() if self.refugio else None
+            'refugio': self.refugio.serialize() if self.refugio else None,
+            'cualidades': [cualidad.serialize() for cualidad in self.cualidades],
         }
+    
+from src.models.MascotaCualidad import MascotaCualidad

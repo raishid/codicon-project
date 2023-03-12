@@ -2,6 +2,7 @@ from flask_seeder import Seeder, Faker, generator
 from src.models.Refugio import Refugio
 from random import choice
 from src.models.Auth import Usuario
+from src.models.Ciudad import Ciudad
 import lorem
 
 class RefugioSeed(Seeder):
@@ -12,6 +13,7 @@ class RefugioSeed(Seeder):
     
     def run(self):
         usuarios = Usuario.query.all()
+        ciudades = Ciudad.query.all()
         faker = Faker(
             cls=Refugio,
             init={
@@ -20,7 +22,8 @@ class RefugioSeed(Seeder):
                 "email": generator.Email(),
                 "telefono": generator.Integer(start=100000, end=9999999),
                 "foto": None,
-                "usuario_id": generator.Integer(1, choice(usuarios).id)
+                "usuario_id": generator.Integer(1, choice(usuarios).id),
+                "ciudad_id": generator.Integer(1, choice(ciudades).id)
             }
         )
 

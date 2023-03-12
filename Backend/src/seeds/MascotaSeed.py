@@ -1,7 +1,9 @@
 from flask_seeder import Seeder, Faker, generator
 from src.models.Mascota import Mascota
 from src.models.Refugio import Refugio
-from random import choice
+from src.models.Cualidad import Cualidad
+from src.models.MascotaCualidad import MascotaCualidad
+from random import choice, randint, sample
 import lorem
 
 class MascotaSeed(Seeder):
@@ -15,6 +17,8 @@ class MascotaSeed(Seeder):
         colores = ['rojo', 'naranja', 'amarillo', 'verde', 'azul', 'violeta', 'rosa', 'gris', 'blanco', 'negro', 'marrón', 'beige']
         razas_perros = ['Labrador Retriever', 'Pastor Alemán', 'Golden Retriever', 'Bulldog', 'Beagle', 'Caniche', 'Dalmata', 'Bichón Frisé', 'Pug', 'Doberman', 'Chihuahua', 'Rottweiler', 'Yorkshire Terrier', 'Cocker Spaniel', 'Husky Siberiano', 'Boxer', 'Dóberman', 'Border Collie', 'Schnauzer', 'Bóxer', 'Chow Chow', 'Maltés', 'Bulldog Francés', 'Shar Pei', 'San Bernardo', 'Teckel', 'Weimaraner', 'Shih Tzu', 'Akita Inu', 'Terranova', 'Bernese Mountain Dog', 'Galgo', 'Whippet', 'Mastín', 'Fox Terrier', 'Pinscher Miniatura', 'Jack Russell Terrier', 'Collie', 'Mastín Napolitano', 'Bull Terrier', 'Cavalier King Charles Spaniel', 'Carlino', 'Pastor Belga', 'West Highland White Terrier', 'Lebrel Afgano', 'Springer Spaniel', 'Pomerania', 'Basset Hound', 'Setter Irlandés', 'Boyero de Berna', 'Briard']
         refugios = self.db.session.query(Refugio).all()
+        cualidades = Cualidad.query.all()
+        num_cualidades = randint(1, 5) # sele
         faker = Faker(
             cls=Mascota,
             init={
@@ -32,8 +36,18 @@ class MascotaSeed(Seeder):
             }
         )
 
+
         for mascota in faker.create(20):
             print('Adding mascota: %s' % mascota)
             self.db.session.add(mascota)
+        
+        self.db.session.commit()
+
+        for mascota in Mascota.query.all():
+            for cualidad in sample(cualidades, num_cualidades):
+                mascota_cualidad = MascotaCualidad(mascota.id, cualidad.id)
+                self.db.session.add(mascota_cualidad)
+
+        self.db.session.commit()
     
 

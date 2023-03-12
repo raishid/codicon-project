@@ -1,6 +1,7 @@
 from src.config.Database import db
 from datetime import datetime
 from src.models.Auth import Usuario
+from src.models.Ciudad import Ciudad
 
 class Refugio(db.Model):
     __tablename__ = 'refugios'
@@ -16,17 +17,20 @@ class Refugio(db.Model):
 
     usuario_id = db.Column(db.Integer, db.ForeignKey(Usuario.id), nullable=True)
     usuario = db.relationship('Usuario', backref=db.backref('refugios_usuario', lazy=True, cascade="all, delete"))
+    ciudad_id = db.Column(db.Integer, db.ForeignKey(Ciudad.id), nullable=True)
+    ciudad = db.relationship('Ciudad', backref=db.backref('refugios_ciudad', lazy=True, cascade="all, delete"))
 
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)
     
-    def __init__(self, nombre, direccion, email, telefono, foto = None, usuario_id = None):
+    def __init__(self, nombre, direccion, email, telefono, foto = None, usuario_id = None, ciudad_id = None):
         self.nombre = nombre
         self.direccion = direccion
         self.email = email
         self.telefono = telefono
         self.foto = foto
         self.usuario_id = usuario_id
+        self.ciudad_id = ciudad_id
 
     def serialize(self):
         return {
@@ -37,4 +41,5 @@ class Refugio(db.Model):
             'telefono': self.telefono,
             'foto': self.foto,
             'usuario': self.usuario.serialize() if self.usuario else None,
+            'ciudad': self.ciudad.serialize() if self.ciudad else None
         }
