@@ -11,7 +11,7 @@ import verifyperro from "../../assets/img/perro validador.svg";
 import perrofeliz from "../../assets/img/felicidades perrito.png";
 import perrosearch from "../../assets/img/perrito-buscando.png";
 import SelectCarousel from "../Elements/SelectCarousel";
-
+import ciudades from "../../contants/ciudades";
 
 export default function Adopt( ) {
     const [show, setShow] = useState(false);
@@ -80,12 +80,11 @@ export default function Adopt( ) {
                             <Log >
                             
                              <select className="form-control" name="" id="">
-                                <option hidden value="">Ciudad</option>
-                                <option value="">Caracas</option>
-                                <option value="">Maracay</option>
-                                <option value="">San Cristobal</option>
+                             {ciudades.map((ciudad, index) => (
+                                    <option key={index} value={ciudad}>{ciudad}</option>
+                                ))}
                              </select>
-                                <p href=" " className="purpleColor" style={{    margin: "15px"}}>caracterizado principalmente por ser</p>
+                                {/* <p href=" " className="purpleColor" style={{    margin: "15px"}}>caracterizado principalmente por ser</p>
                                 <div className="row flexSpaceCenter">
                                     <div className=" form-check col-md-3"  >
                                         <input type="checkbox" id="huey" className="form-check-input"/>
@@ -100,7 +99,7 @@ export default function Adopt( ) {
                                         <label className="purpleColor form-check-label" for="huey">Travieso</label>
                                     </div>
                                     
-                                </div>
+                                </div> */}
                                 
 
                                 <div className="flex" style={{margin:"30px 0px 0px 0px"}} >
