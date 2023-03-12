@@ -1,11 +1,10 @@
 from flask import (
-    Blueprint, request, url_for, redirect, render_template, session,
+    Blueprint, request, url_for, redirect, session,
     current_app, jsonify)
 from flask_login import login_required, logout_user, login_user, current_user
 from flask_principal import Identity, AnonymousIdentity, identity_changed
 from werkzeug.security import generate_password_hash, check_password_hash
 from src.config.Database import db
-from src.config.Auth import shelter_permission
 from src.models.Auth import Usuario
 
 url_prefix = '/v1'
