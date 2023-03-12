@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Adopt from "../Elements/Adopt";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets

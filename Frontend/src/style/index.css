@@ -11,6 +11,7 @@
   figure, figcaption, footer, header, hgroup, 
   menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
+  
     margin: 0;
     padding: 0;
     border: 0;
@@ -230,7 +231,7 @@
     color: #0B093B;
   }
   .purpleColor {
-    color: #7620FF;
+    color: #6F63B7;
   }
   .orangeColor {
     color: #F2B300;
@@ -255,7 +256,7 @@
     background-color: #0B093B;
   }
   .purpleBg {
-    background-color: #6F63B7;
+    background-color: #7063b785;
   }
   .purpleBg h2, .purpleBg h1 {
   color: #f8f8f8;
@@ -270,7 +271,7 @@
     background-color: #C4FFFF;
   }
   .greenBg {
-    background-color: #4dbfa8;
+    background-color: #4dbfa89d;
   }
   .greyBg {
     background-color: #707070;
@@ -327,3 +328,26 @@ h2, h1{
 
      /* Breakpoint SM slide covers 50% of the viewport */
   }
+
+  .form-control:focus {
+    color: #6f63b7;
+    background-color: #fff;
+    border-color: #6f63b7;
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem rgb(128, 119, 178);
+}
+.form-control {
+ 
+  border: 1px solid #6f63b7;
+  color: #6f63b7;
+}
+.rounded-7{border-radius:1rem!important}
+.bsnone{
+  --bs-gutter-x: 0;
+}
+.select-modal{
+  display: flex;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: center;
+}

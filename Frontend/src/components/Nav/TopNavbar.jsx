@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
+
+
 import styled from "styled-components";
 import { Link } from "react-scroll";
-// Components
+
 import Sidebar from "../Nav/Sidebar";
 import Backdrop from "../Elements/Backdrop";
+import Adopt from "../Elements/Adopt";
+import Login from "../Elements/login";
 // Assets
 import LogoIcon from "../../assets/svg/Logo";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 
 export default function TopNavbar() {
+
+
   const [y, setY] = useState(window.scrollY);
   const [sidebarOpen, toggleSidebar] = useState(false);
 
@@ -61,15 +67,13 @@ export default function TopNavbar() {
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
-              <a href="/" style={{ padding: "10px 30px 10px 0" }}>
-                Log in
-              </a>
+             <Login/>
             </li>
             <li className="semiBold font15 pointer flexCenter">
-              <a href="/" className="whiteColor radius8 greenBg" style={{ padding: "10px 15px" }}>
-                ADOPTAR
-              </a>
+            <Adopt/>
+            
             </li>
+       
           </UlWrapperRight>
         </NavInner>
       </Wrapper>

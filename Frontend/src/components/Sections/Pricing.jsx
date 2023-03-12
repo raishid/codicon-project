@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Adopt from "../Elements/Adopt";
 // Components
 import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
@@ -24,9 +25,7 @@ export default function Pricing() {
         
         <div className=" textCenter" style={{width:"466px",    margin: "29px 0px"}}>
      
-      <a href="/" className="whiteColor radius8 greenBg" style={{ padding: "10px 15px" }}>
-                ADOPTAR
-              </a>
+        <Adopt/>
       </div>
         </Flexi>
       
