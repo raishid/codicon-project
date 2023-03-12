@@ -199,10 +199,10 @@ export default function Adopt( ) {
                         <h2 className="textCenter" style={{margin:"30px 0px;"}}>Datos para adoptar</h2>
                             <Log  style={{margin:"15px auto"}}>
                             
-                            <input placeholder="Nombre completo" name="nombre" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
-                <input placeholder="Correo de quien recibe" name="correo" className="form-control" type="email" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
-                <input placeholder="Teléfono de quien recibe" name="telefono" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
-                <input placeholder="Dirección de envío" name="direccion" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante}/>
+                            <input placeholder="Nombre completo" name="nombre" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante} autocomplete="off"/>
+                <input placeholder="Correo de quien recibe" name="correo" className="form-control" type="email" style={{    margin: "15px"}} onChange={handleChangeAdoptante} autocomplete="off"/>
+                <input placeholder="Teléfono de quien recibe" name="telefono" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante} autocomplete="off"/>
+                <input placeholder="Dirección de envío" name="direccion" className="form-control" type="text" style={{    margin: "15px"}} onChange={handleChangeAdoptante} autocomplete="off"/>
                                 
 
                                 <div className="flex" style={{margin:"30px 0px 0px 0px"}} >
