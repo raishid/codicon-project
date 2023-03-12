@@ -10,5 +10,18 @@ export default defineConfig({
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+      output: {
+        dir: 'dist',
+        assetFileNames: 'assets/[name][extname]',
+      },
+    },
+    assetsDir: 'assets',
+    assetsInlineLimit: 0,
+  },
 })

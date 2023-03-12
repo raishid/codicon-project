@@ -193,7 +193,7 @@ export default function Adopt( ) {
                     </div>
                     <div className="col-md-8" style={{margin:"50px 0 0 0"}}>
                         <div className="col-3" style={{margin:"auto"}}>
-                            <Logo src="./src/assets/svg/logo onbox.svg" alt="" />
+                            <Logo src="/assets/logo onbox.svg" alt="" />
                         </div>
                  
                         <h2 className="textCenter" style={{margin:"30px 0px;"}}>Datos para adoptar</h2>
@@ -312,7 +312,7 @@ export default function Adopt( ) {
              
                     <div className="col-md-12" style={{margin:"50px 0 0 0"}}>
                         <div className="col-2" style={{margin:"auto"}}>
-                            <Logo src="./src/assets/svg/logo onbox.svg" alt="" />
+                            <Logo src="/assets/logo onbox.svg" alt="" />
                         </div>
                  
                         <h2 className="textCenter" style={{margin:"30px 0px;"}}>¡Felicidades!</h2>
