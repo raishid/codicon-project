@@ -268,10 +268,10 @@
     background-color: #AFDCE2;
   }
   .coralBg {
-    background-color: #C4FFFF;
+    background-color: #AFDCE2;
   }
   .greenBg {
-    background-color: #4dbfa89d;
+    background-color: #4dbfa8;
   }
   .greyBg {
     background-color: #707070;
@@ -350,4 +350,13 @@ h2, h1{
     /* align-content: center; */
     align-items: center;
     justify-content: center;
+}
+.grid{
+  display: grid;
+}
+.col-md-4 img{
+  object-fit: cover;
+}
+a{
+  cursor: pointer;
 }
