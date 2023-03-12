@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 
-import ProjectBox from "../Elements/ProjectBox";
+import DogBox from "./DogBox";
 import FullButton from "../Buttons/FullButton";
 // Assets
 import styled from "styled-components";
@@ -9,12 +9,14 @@ import ProjectImg1 from "../../assets/img/pets/foto 1.png";
 import ProjectImg2 from "../../assets/img/pets/foto 2.png";
 import ProjectImg3 from "../../assets/img/pets/foto 3.png";
 import ProjectImg4 from "../../assets/img/pets/foto 4.png";
-import Eleccion from "../../assets/img/modo heroe.png";
-import Heroe from "../../assets/img/modo eleccion.png";
-import AddImage2 from "../../assets/img/pets/foto 1.png";
 
 
-export const EmblaCarousel = () => {
+
+
+
+
+
+export default  function SelectCarousel ({action}){
   const [emblaRef, emblaApi] = useEmblaCarousel()
 
   const scrollPrev = useCallback(() => {
@@ -29,31 +31,38 @@ export const EmblaCarousel = () => {
     <Embla className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <EmblaContainer className="embla__container  ">
-        <ProjectBox className="embla__slide "
+        <DogBox className="embla__slide Select_slide "
               img={ProjectImg1}
-              mode={Eleccion}
-              
-              title="Junior"
-              text=" Valencia, Venezuela"
-              action={() => alert("clicked")}
-            /><ProjectBox className="embla__slide   "
+              tamano="Mediano"
+              raza="mestizo"
+              Nombre="Junior"
+              Sexo="Macho"
+              ciudad=" Valencia, Venezuela"
+              action={action}
+            /><DogBox className="embla__slide Select_slide  "
             img={ProjectImg2}
-            mode={Heroe}
-            title="Canela"
-            text=" Valencia, Venezuela"
-            action={() => alert("clicked")}
-          /><ProjectBox className="embla__slide   "
+              tamano="Mediano"
+              raza="Bulldog"
+              Nombre="Cacha"
+              Sexo="Macho"
+              ciudad=" Valencia, Venezuela"
+              action={action}
+          /><DogBox className="embla__slide Select_slide  "
           img={ProjectImg3}
-          title="Ginebra"
-          text=" Valencia, Venezuela"
-          mode={Heroe}
-          action={() => alert("clicked")}
-        /><ProjectBox className="embla__slide   "
+              tamano="Grande"
+              raza="mestizo"
+              Nombre="Tom"
+              Sexo="Macho"
+              ciudad=" Caracas, Venezuela"
+              action={action}
+        /><DogBox className="embla__slide  Select_slide "
         img={ProjectImg4}
-        title="Canela"
-        mode={Eleccion}
-        text=" Valencia, Venezuela"
-        action={() => alert("clicked")}
+              tamano="Pequeño"
+              raza="mestizo"
+              Nombre="Sofi"
+              Sexo="Hembra"
+              ciudad=" Valencia, Venezuela"
+              action={action}
       />
         </EmblaContainer>
       </div>
@@ -62,21 +71,13 @@ export const EmblaCarousel = () => {
   )
 }
 
-
-
-export default EmblaCarousel;
 const Embla =styled.section`
 max-width: 85vw;
     margin: auto;`;
 
 
 const EmblaContainer = styled.section`
-  margin-left:-28vw;
-  @media (max-width: 768px) {
-     
-    margin-left: -16vw;  };
-  
-    
+ 
     
 `;
 

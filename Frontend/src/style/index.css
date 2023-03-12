@@ -164,6 +164,7 @@
   }
   .font15 {
     font-size: 0.938rem;
+    color: #8a8a8a;
   }
   .font18 {
     font-size: 1.125rem;
@@ -231,7 +232,7 @@
     color: #0B093B;
   }
   .purpleColor {
-    color: #6F63B7;
+    color: #6F63B7 !important;
   }
   .orangeColor {
     color: #F2B300;
@@ -240,7 +241,7 @@
     color: #F5F5F5;
   }
   .coralColor {
-    color: #C4FFFF;
+    color: #AFDCE2;
   }
   .greenColor {
     color: #4dbfa8;
@@ -265,7 +266,7 @@
     background-color: #F2B300;
   }
   .lightBg {
-    background-color: #AFDCE2;
+    background-color: #afdce271;
   }
   .coralBg {
     background-color: #AFDCE2;
@@ -328,7 +329,16 @@ h2, h1{
 
      /* Breakpoint SM slide covers 50% of the viewport */
   }
+.Select_slide {
+  flex: 0 0 45%; 
+  margin: 14px !important/* Default slide covers 100% of the viewport */
+}
+@media (min-width: 768px) {
+  .Select_slide {
+    flex: 0 0 28%;  };
 
+     /* Breakpoint SM slide covers 50% of the viewport */
+  }
   .form-control:focus {
     color: #6f63b7;
     background-color: #fff;
