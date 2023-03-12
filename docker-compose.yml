@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  backend:
+    image: codicon_backend:1.0
+    container_name: codicon_backend
+    build:
+      context: ./Backend
+      dockerfile: /Dockerfile
+    ports:
+      - "${PORT_BACKEND}:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - codicon
+    depends_on:
+      - mysql
+    
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pixel_perfect
+      MYSQL_USER: codicon
+      MYSQL_PASSWORD: codicon
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - codicon
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: codicon
+      PMA_PASSWORD: codicon
+    depends_on:
+      - mysql
+    networks:
+      - codicon
+
+networks:
+  codicon:
+    driver: bridge
