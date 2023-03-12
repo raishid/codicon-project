@@ -9,6 +9,8 @@ flask-sqlalchemy = "*"
 python-dotenv = "*"
 mysqlclient = "*"
 lorem = "*"
+flask-principal = "*"
+flask-login = "*"
 
 [dev-packages]
 flask-migrate = "*"

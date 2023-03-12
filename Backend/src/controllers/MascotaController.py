@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from src.models.Mascota import Mascota
 from src.config.Database import db
+from src.config.Auth import admin_and_shelter
 
 url_prefix = '/v1'
 mascota_bp = Blueprint('mascotas', __name__)
@@ -19,6 +20,7 @@ def index():
     })
 
 @mascota_bp.route('/mascotas', methods=['POST'])
+@admin_and_shelter.require(http_exception=403)
 def create():
     data = request.json
     mascota = Mascota(
@@ -41,12 +43,13 @@ def create():
     return jsonify(mascota.serialize())
 
 @mascota_bp.route('/mascotas/<id>', methods=['GET'])
-def edit(id):
+def show(id):
     mascota = Mascota.query.get(id)
 
     return jsonify(mascota.serialize())
 
 @mascota_bp.route('/mascotas/<id>', methods=['PUT'])
+@admin_and_shelter.require(http_exception=403)
 def update(id):
     data = request.json
     mascota = Mascota.query.get(id)
@@ -67,6 +70,7 @@ def update(id):
     return jsonify(mascota.serialize())
 
 @mascota_bp.route('/mascotas/<id>', methods=['DELETE'])
+@admin_and_shelter.require(http_exception=403)
 def delete(id):
     mascota = Mascota.query.get(id)
     db.session.delete(mascota)
