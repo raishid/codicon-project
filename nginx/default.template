@@ -17,7 +17,7 @@ server{
     listen 80;
     server_name ${FRONTEND_HOST};
     location / {
-        root /var/www/frontend;
+        root /var/www/html/frontend;
         index index.html;
     }
 
