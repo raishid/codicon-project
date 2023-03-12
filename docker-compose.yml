@@ -30,6 +30,7 @@ services:
     environment:
       - BACKEND_HOST=${BACKEND_HOST}
       - APP_SSL=${APP_SSL}
+      - FRONTEND_HOST=${FRONTEND_HOST}
     volumes:
       - ./Frontend/dist/:/var/www/html/frontend/
       - ./certbot/www:/var/www/certbot/:ro
