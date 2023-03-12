@@ -9,6 +9,8 @@ import family from "../../assets/img/foto en caja 3.jpg";
 import superperro from "../../assets/img/perrito super heroe.svg";
 import verifyperro from "../../assets/img/perro validador.svg";
 import perrofeliz from "../../assets/img/felicidades perrito.png";
+import perrosearch from "../../assets/img/perrito-buscando.png";
+import SelectCarousel from "../Elements/SelectCarousel";
 
 
 export default function Adopt( ) {
@@ -31,8 +33,8 @@ export default function Adopt( ) {
        
     const Showhero1 = () =>{ setChoose("none"); setHero1("block");setform("none")}
     const Showselect = () =>{ setChoose("none"); setselect("block");setform("none")}
-    const Showchoose=() =>{setChoose("block"); setHero1("none"); setselect("none") }
-    const Showform=() =>{setform("block"); setHero1("none") ; setconfirm("none")}
+    const Showchoose=() =>{setChoose("block"); setHero1("none"); setselect("none"); setform("none") }
+    const Showform=() =>{setform("block"); setHero1("none") ; setselect("none");setconfirm("none")}
     const Showconfirm=() =>{setconfirm("block"); setform("none") ; setfin("none")}
     const Showfin=() =>{setfin("block"); setconfirm("none") }
     
@@ -118,53 +120,67 @@ export default function Adopt( ) {
             </Modal.Body>
         </div>
         <div style={{display:select1}}>
-       
-
-        
-            <Modal.Body className="row bsnone" style={{padding: '0'}}    >
-                <div className="row bsnone">
-                    <div className="col-md-8" style={{margin:"50px 0 0 0"}}>
-                        <h2 className="textCenter" style={{    margin:"30px 0px;"}}>¿En donde buscamos?</h2>
-                            <Log >
-                            
-                             <select className="form-control" name="" id="">
+        <Modal.Header className="row" bsnone >
+                    <div className="col-10 row" style={{padding:"0"}}>
+                        <div className="col-6 col-md-3">
+                            <label htmlFor="" className="fw-bolder purpleColor">Ciudad </label>
+                        <select className="form-control " name="" id="">
+                                <option hidden value="">Todas</option>
+                                <option value="">Caracas</option>
+                                <option value="">Maracay</option>
+                                <option value="">San Cristobal</option>
+                             </select>
+                        </div>
+                        <div className="col-6 col-md-3">
+                            <label htmlFor="" className="fw-bolder purpleColor">Refugio </label>
+                        <select className="form-control " name="" id="">
+                                <option hidden value="">Todos</option>
+                                <option value="">Caracas</option>
+                                <option value="">Maracay</option>
+                                <option value="">San Cristobal</option>
+                             </select>
+                        </div>
+                        <div className="col-6 col-md-3">
+                            <label htmlFor="" className="fw-bolder purpleColor">edad </label>
+                        <select className="form-control " name="" id="">
                                 <option hidden value="">Ciudad</option>
                                 <option value="">Caracas</option>
                                 <option value="">Maracay</option>
                                 <option value="">San Cristobal</option>
                              </select>
-                                <p href=" " className="purpleColor" style={{    margin: "15px"}}>caracterizado principalmente por ser</p>
-                                <div className="row flexSpaceCenter">
-                                    <div className=" form-check col-md-3"  >
-                                        <input type="checkbox" id="huey" className="form-check-input"/>
-                                        <label className="purpleColor form-check-label" for="huey">Juguetón</label>
-                                    </div>
-                                    <div className=" form-check col-md-3"   >
-                                        <input type="checkbox" id="huey" className="form-check-input"/>
-                                        <label className="purpleColor form-check-label" for="huey">Calmado</label>
-                                    </div>
-                                    <div className=" form-check col-md-3">
-                                        <input type="checkbox" id="huey" className="form-check-input"/>
-                                        <label className="purpleColor form-check-label" for="huey">Travieso</label>
-                                    </div>
-                                    
-                                </div>
-                                
+                        </div>
+                        <div className="col-6 col-md-3">
+                            <label htmlFor="" className="fw-bolder purpleColor">Caracteristicas </label>
+                        <select className="form-control " name="" id="">
+                                <option hidden value="">Ciudad</option>
+                                <option value="">Caracas</option>
+                                <option value="">Maracay</option>
+                                <option value="">San Cristobal</option>
+                             </select>
+                        </div>
+                  
+                           
+                             
+                             
+                    </div>
+                    <div className="col-2">
+                        <img width="" style={{width:"50px"}} src={perrosearch} alt="" />
+                    </div>
+            </Modal.Header >
 
-                                <div className="flex" style={{margin:"30px 0px 0px 0px"}} >
+        
+            <Modal.Body className="row lightBg bsnone" style={{padding: '0'}}    >
+            <SelectCarousel
+            action={Showform}>
+       
+       </SelectCarousel>
+         
+       <div className="flexCenter" style={{margin:"30px 0px 20px "}} >
                                     <a onClick={Showchoose} className="whiteColor radius8 greenBg" style={{ padding: "10px 15px", margin:"0 10px 0 10px"}}>
                                     ATRÁS</a>
-                                    <a onClick={Showform} className="whiteColor radius8 greenBg" style={{ padding: "10px 15px", margin:"0 10px 0 10px" }}>
-                                    SIGUIENTE</a>
+                                    
                                 </div>
                     
-                            </Log>
-                    </div>
-                    <div className="col-md-4">
-                        <Dogbox src={dogbox} alt="" style={{height:"100%"}} />
-                    </div>
-            
-                </div>
             </Modal.Body>
         </div>
 
