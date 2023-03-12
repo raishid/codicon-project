@@ -6,7 +6,7 @@ services:
     container_name: codicon_backend
     build:
       context: ./Backend
-      dockerfile: /Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "${PORT_BACKEND}:8001"
     environment:
@@ -15,6 +15,24 @@ services:
       - codicon
     depends_on:
       - mysql
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: backing-ring-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - BACKEND_HOST=${BACKEND_HOST}
+      - APP_SSL=${APP_SSL}
+    volumes:
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+    networks:
+      - codicon
     
   mysql:
     image: mysql:5.7
