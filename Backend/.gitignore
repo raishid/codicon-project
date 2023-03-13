@@ -5,3 +5,4 @@ src/seeders/__pycache__
 __pycache__
 *.swp
 .pylintrc
+.env

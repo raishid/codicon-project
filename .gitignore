@@ -2,3 +2,5 @@
 package-lock.json
 package.json
 /mysql
+/certbot
+.env

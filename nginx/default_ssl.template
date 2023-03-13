@@ -36,6 +36,6 @@ server{
         index index.html;
     }
 
-    ssl_certificate /etc/nginx/ssl/live/${BACKEND_HOST}/fullchain.pem;
-    ssl_certificate_key /etc/nginx/ssl/live/${BACKEND_HOST}/privkey.pem;
+    ssl_certificate /etc/nginx/ssl/live/${FRONTEND_HOST}/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/${FRONTEND_HOST}/privkey.pem;
 }

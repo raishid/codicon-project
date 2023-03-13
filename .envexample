@@ -1,0 +1,4 @@
+PORT_BACKEND=8001
+BACKEND_HOST=api.onbox.lat
+APP_SSL=false
+FRONTEND_HOST=onbox.lat

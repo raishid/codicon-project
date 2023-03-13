@@ -1,3 +1,5 @@
+![Image text](https://github.com/raishid/codicon-project/blob/main/Frontend/src/assets/img/logo%20onbox.svg)
+
 # [ONBOX, Adopta una mascota.](http://onbox.lat/)
 ## Concepto
 Sitio web realizado con el objetivo de que las personas puedan adoptar una mascota. Iniciando con perros. 
@@ -9,4 +11,4 @@ Poder adoptar un perrito desde cualquier refugio que esté registrado en la web.
 
 ### Workflow
 
- 
+![Image text](https://github.com/raishid/codicon-project/blob/main/workflow.jpeg)
