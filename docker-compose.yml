@@ -33,7 +33,7 @@ services:
       - FRONTEND_HOST=${FRONTEND_HOST}
     volumes:
       - ./Frontend/dist/:/var/www/html/frontend/
-      - ./certbot/www/:/var/www/certbot/:ro
+      - ./certbot/www:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
     networks:
       - codicon
@@ -70,7 +70,7 @@ services:
     image: certbot/certbot:latest
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/nginx/ssl/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
     networks:
       - codicon
       
